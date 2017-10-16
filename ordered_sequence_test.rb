@@ -8,7 +8,7 @@ class TestUntitled < Test::Unit::TestCase
   # It should return an empty sequence.
   def test_returns_empty_string_if_no_jobs
     sequence = Sequence.new()
-    sequence.add(@no_jobs)
+    sequence.add("")
     assert sequence.ordered.empty?
   end
 
@@ -48,7 +48,6 @@ class TestUntitled < Test::Unit::TestCase
     sequence.ordered.each do |job|
       assert (%w[a b c].include?(job))
     end
-    p sequence.ordered
     assert sequence.ordered.index("c") < sequence.ordered.index("b")
   end
 
